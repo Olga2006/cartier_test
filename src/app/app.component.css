@@ -1,0 +1,16 @@
+.app-container {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  margin: 0px;
+  border: 1px solid #555;
+  background-color: rgb(240, 238, 238);
+}
+.side-menu-container {
+  padding: 45px 15px;
+}
+.content-container {
+  padding: 50px 20px 20px 20px;
+  background-color: rgb(240, 238, 238);
+  color: #555;
+}

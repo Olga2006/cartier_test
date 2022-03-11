@@ -1,0 +1,71 @@
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 100%;
+}
+.landing-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.landing-body {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: auto;
+}
+mat-spinner {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.error-card {
+  width: fit-content;
+  height: auto;
+  background-color: #555;
+}
+.main-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 20px;
+  padding-top: 50px;
+}
+.data-block {
+  margin-bottom: 30px;
+}
+.button-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+button{
+  margin: 5px;
+}
+.button-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+}
+.button-label {
+  font-size: large;
+  padding: 4px;
+}
+::ng-deep .mat-form-field {
+  .mat-input-element {
+      color: #555;
+  }
+}
+::ng-deep .mat-form-field-label {
+  color: #555!important;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #555!important;
+}
+::ng-deep input.mat-input-element {
+  color: #555!important;
+}

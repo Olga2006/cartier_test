@@ -1,0 +1,84 @@
+<div class="landing-container">
+  <div class="landing-header">
+    <h1>Bienvenue dans Cartier</h1>
+    <mat-form-field appearance="outline">
+      <mat-label>Reshercher un partenaire</mat-label>
+      <input matInput [(ngModel)]="searchTxt" type="text" id="searchTxt" name="searchTxt">
+      <mat-icon matSuffix aria-hidden="false" aria-label="Search">search</mat-icon>
+    </mat-form-field>
+  </div>
+  <div *ngIf="!isLoaded" class="progress-spiner">
+    <mat-spinner color="accent"></mat-spinner>
+  </div>
+  <div *ngIf="loadingErr">
+    <mat-card class="error-card">
+      <mat-card-subtitle>Erreur</mat-card-subtitle>
+      <mat-card-content>
+        <p>Un problème est survenu lors du chargement de ce contenu</p>
+      </mat-card-content>
+      <mat-divider inset></mat-divider>
+      <mat-card-actions class="button-row">
+        <button mat-raised-button color="accent" (click)="chargerAll()">Recharger</button>
+      </mat-card-actions>
+      <mat-card-footer>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+  <div class="landing-body" *ngIf="isLoaded && !loadingErr">
+    <mat-grid-list cols="2" rowHeight="600">
+      <mat-grid-tile colspan="1" rowspan="1">
+        <div class="main-block">
+          <h1>Alertes</h1>
+          <div class="data-block">
+            <h2>Centralisation</h2>
+            <app-line-cartier *ngFor="let partenaire of cartier.centralisation | searchFilter: searchTxt; index as i"
+              [partenaire]="partenaire">
+            </app-line-cartier>
+          </div>
+          <div class="data-block">
+            <h2>Business partner à finaliser</h2>
+            <app-line-cartier *ngFor="let partenaire of cartier.finaliser | searchFilter: searchTxt; index as i"
+              [partenaire]="partenaire"></app-line-cartier>
+          </div>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1">
+        <div class="main-block">
+          <h1>Flux</h1>
+          <h2>Mis à jour récemment</h2>
+          <div class="data-block">
+            <app-line-cartier *ngFor="let partenaire of cartier.majRecement | searchFilter: searchTxt; index as i"
+              [partenaire]="partenaire">
+            </app-line-cartier>
+          </div>
+          <h2>Dernière créations</h2>
+          <div class="data-block">
+            <app-line-cartier *ngFor="let partenaire of cartier.dernierCreations | searchFilter: searchTxt; index as i"
+              [partenaire]="partenaire">
+            </app-line-cartier>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <div class="button-row">
+      <button mat-raised-button color="accent">
+        <div class="button-inner">
+          <mat-icon aria-hidden="false" aria-label="Faire un extract">get_app</mat-icon>
+          <div class="button-label">Faire un extract</div>
+        </div>
+      </button>
+      <button mat-raised-button>
+        <div class="button-inner">
+          <mat-icon aria-hidden="false" aria-label="Faire un regroupement">add_circle_outline</mat-icon>
+          <div class="button-label">Faire un regroupement</div>
+        </div>
+      </button>
+      <button mat-raised-button>
+        <div class="button-inner">
+          <mat-icon aria-hidden="false" aria-label="Créer un partenaire">add_circle_outline</mat-icon>
+          <div class="button-label">Créer un partenaire</div>
+        </div>
+      </button>
+    </div>
+  </div>

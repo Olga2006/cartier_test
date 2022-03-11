@@ -1,0 +1,16 @@
+mat-list-item {
+    margin-bottom: 15px;
+    background-color: #303030;
+  }
+.circular-square { 
+    margin: auto; 
+    width: 100px; 
+    height: 100px; 
+    overflow: hidden; 
+    border-radius: 50%; 
+    margin-bottom: 20px; } 
+.client-container {
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+  } 
