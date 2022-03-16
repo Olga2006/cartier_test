@@ -1,0 +1,109 @@
+.centralisation-container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 100%;
+}
+.centralisation-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+mat-spinner {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.error-card {
+  width: fit-content;
+  height: auto;
+  background-color: #555;
+}
+
+
+.centralisation-body {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+.main-block {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.data-block {
+  display: flex;
+  width: 100%!important;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: auto;
+}
+
+app-line-centralisation {
+  width: 100%!important;
+}
+.filter-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.filter-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  margin: 20px 0px 10px 0px;
+  padding: 7px;
+}
+.filter-no-data-block {
+  background-color:  rgb(240, 238, 238);
+  width: 200px;
+  height: 380px;
+}
+
+::ng-deep .mat-form-field {
+  .mat-input-element {
+      color: #555;
+  }
+}
+::ng-deep .mat-form-field-label {
+  color: #555!important;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #555!important;
+}
+::ng-deep input.mat-input-element {
+  color: #555!important;
+}
+
+.button-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+}
+button{
+  margin: 5px;
+}
+.button-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+}
+.button-label {
+  font-size: large;
+  padding: 4px;
+}
+

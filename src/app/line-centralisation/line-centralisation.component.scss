@@ -1,0 +1,96 @@
+.data-row {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.data-label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 150px;
+}
+
+.data-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.data-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  margin: 10px;
+  padding: 1px;
+}
+.data-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: auto;
+}
+
+.data-number {
+  margin-right: 7px;
+  font-weight: bolder;
+}
+.new-mention {
+  color: #c2185b;
+}
+.add-data {
+  color: rgba(204, 203, 203, 0.719);
+  font-weight: bolder;
+}
+
+mat-radio-group{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  .multi-mat-card{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(240, 238, 238);
+    height: 50px;
+    margin: 10px;
+    padding: 1px;
+    width: 200px;
+    color: #555;
+    mat-radio-button {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: white;
+      height: 100%;
+      flex: 1;
+      padding-left: 10px;
+    }
+  }
+}
+
+
+.single-data{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.single-mat-card{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgb(240, 238, 238);
+  width: 645px;
+  height: 50px;
+  margin: 10px;
+  padding: 1px;
+  color: #555;  
+}

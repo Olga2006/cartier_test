@@ -1,0 +1,33 @@
+<div class="data-row" *ngIf="singleData && !isHeaderData">
+    <label class="data-label">{{labelTxt}}</label>
+    <mat-radio-group aria-label="Select an option" class="data-group">
+        <mat-card class="single-mat-card">
+            <div class="single-data">{{singleData}}</div>
+        </mat-card>
+    </mat-radio-group>
+</div>
+<div class="data-row" *ngIf="!singleData && !isHeaderData">
+    <label class="data-label">{{labelTxt}}</label>
+    <mat-radio-group aria-label="Select an option" class="data-group" (change)="onOptionSelect()"
+        [(ngModel)]="singleData">
+        <mat-card class="multi-mat-card" *ngFor="let item of listData">
+            <mat-radio-button *ngIf="item" color="accent" [value]="item">{{item}}</mat-radio-button>
+        </mat-card>
+    </mat-radio-group>
+</div>
+<div class="data-row" *ngIf="isHeaderData">
+    <label class="data-label" id="n-partenaire">N Partenaire</label>
+    <mat-radio-group aria-labelledby="n-partenaire" class="data-group">
+        <div class="data-header" *ngFor="let partenaire of listPartenaire">
+            <div class="data-row">
+                <div class="data-number">{{partenaire.siret}}</div>
+                <div class="new-mention" *ngIf="listPartenaire[0]!=partenaire">Nouveau</div>
+            </div>
+            <div class="data-row">
+                <div class="add-data">{{partenaire.createDate | date: 'dd/MM/yyyy'}} - </div>
+                <div class="add-data">{{partenaire.personNom}}</div>
+            </div>
+
+        </div>
+    </mat-radio-group>
+</div>

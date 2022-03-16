@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { SearchFilterPipe } from './search-filter.pipe';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +29,8 @@ import { FournisseursComponent } from './fournisseurs/fournisseurs.component';
 
 import { LineCartierComponent } from './line-cartier/line-cartier.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { CentralisationComponent } from './centralisation/centralisation.component';
+import { LineCentralisationComponent } from './line-centralisation/line-centralisation.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { MatDividerModule } from '@angular/material/divider';
     SearchFilterPipe,
     EnrichissementClientComponent,
     ParametresComponent,
-    FournisseursComponent
+    FournisseursComponent,
+    CentralisationComponent,
+    LineCentralisationComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatDialogModule,
     MatProgressSpinnerModule,
     MatDividerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

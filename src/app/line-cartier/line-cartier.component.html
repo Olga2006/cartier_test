@@ -1,7 +1,7 @@
-<mat-card>
-    <div class="date-container">
-        <div class="hour-block">{{ partenaire.majDate | date: 'H:mm'}}h</div>
-        <div class="date-block">{{ partenaire.majDate | date: 'dd/mm/yyyy'}} </div>
+<mat-card (click)="onViewProposition()">
+    <div class="date-container" *ngIf="partenaire.majDate">
+        <div class="hour-block">{{ partenaire.majDate | date: 'H'}}h{{ partenaire.majDate | date: 'mm'}}</div>
+        <div class="date-block">{{ partenaire.majDate | date: 'dd/MM/yyyy'}} </div>
     </div>
     <div class="siret-container">
         {{ partenaire.siret }}

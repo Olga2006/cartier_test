@@ -1,0 +1,95 @@
+<div class="centralisation-container">
+    <div class="centralisation-header">
+        <button mat-button color="accent" (click)="goBack()">
+            <div class="button-inner">
+                <mat-icon aria-hidden="false" aria-label="Retour">arrow_back_ios</mat-icon>
+                <div class="button-label">Retour</div>
+            </div>
+        </button>
+
+        <h1>Centralisation</h1>
+
+    </div>
+    <div *ngIf="!isLoaded" class="progress-spiner">
+        <mat-spinner color="accent"></mat-spinner>
+    </div>
+    <div *ngIf="loadingErr">
+        <mat-card class="error-card">
+            <mat-card-subtitle>Erreur</mat-card-subtitle>
+            <mat-card-content>
+                <p>Un problème est survenu lors du chargement de ce contenu</p>
+            </mat-card-content>
+            <mat-divider inset></mat-divider>
+            <mat-card-actions class="button-row">
+                <button mat-raised-button color="accent" (click)="chargerProposition()">Recharger</button>
+            </mat-card-actions>
+            <mat-card-footer>
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+
+    <div class="centralisation-body" *ngIf="isLoaded && !loadingErr">
+        <div class="main-block">
+
+            <div class="data-block">
+                <app-line-centralisation [labelTxt]="'N Partenaire'" [isHeaderData]="true"
+                    [listPartenaire]="listPartenaire"></app-line-centralisation>
+                <app-line-centralisation [labelTxt]="'Raison sociale'"
+                    (newItemSend)="addNewItem($event, 'Raison sociale')" [singleData]="raisonSocial ? raisonSocial : ''"
+                    [listData]="listRaisonSocial" [isHeaderData]="false" [listPartenaire]="[]">
+                </app-line-centralisation>
+
+                <app-line-centralisation [labelTxt]="'SIRET'" (newItemSend)="addNewItem($event, 'SIRET')"
+                    [singleData]="siret ? siret : ''" [listData]="listSiret" [isHeaderData]="false"
+                    [listPartenaire]="[]"></app-line-centralisation>
+
+                <app-line-centralisation [labelTxt]="'SIREN'" (newItemSend)="addNewItem($event, 'SIREN')"
+                    [singleData]="siren ? siren : ''" [listData]="listSiren" [isHeaderData]="false"
+                    [listPartenaire]="[]"></app-line-centralisation>
+
+                <app-line-centralisation [labelTxt]="'Adresse'" (newItemSend)="addNewItem($event, 'Adresse')"
+                    [singleData]="adress ? adress : ''" [listData]="listAdress" [isHeaderData]="false"
+                    [listPartenaire]="[]"></app-line-centralisation>
+
+                <app-line-centralisation [labelTxt]="'Ville'" (newItemSend)="addNewItem($event, 'Ville')"
+                    [singleData]="ville ? ville : ''" [listData]="listVille" [isHeaderData]="false"
+                    [listPartenaire]="[]"></app-line-centralisation>
+
+                <app-line-centralisation [labelTxt]="'Code postal'" (newItemSend)="addNewItem($event, 'Code postal')"
+                    [singleData]="codePostal ? codePostal : ''" [listData]="listCodePostal" [isHeaderData]="false"
+                    [listPartenaire]="[]">
+                </app-line-centralisation>
+            </div>
+            <!--             <div class="filter-block">
+                <div class="filter-header">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Reshercher un partenaire</mat-label>
+                        <input matInput [(ngModel)]="searchTxt" type="text" id="searchTxt" name="searchTxt">
+                        <mat-icon matSuffix aria-hidden="false" aria-label="Search">search</mat-icon>
+                    </mat-form-field>
+                </div>
+                <mat-card class="filter-no-data-block"></mat-card>
+            </div> -->
+
+        </div>
+
+
+        <div class="button-row">
+            <button mat-raised-button color="accent" (click)="onDataInit()">
+                <div class="button-inner">
+                    <mat-icon aria-hidden="false" aria-label="Annuler">cancel_schedule_send</mat-icon>
+                    <div class="button-label">Annuler</div>
+                </div>
+            </button>
+            <button mat-raised-button (click)="onDataSend()">
+                <div class="button-inner">
+                    <mat-icon aria-hidden="false" aria-label="Validation">send</mat-icon>
+                    <div class="button-label">Validation</div>
+                </div>
+            </button>
+        </div>
+
+
+    </div>
+</div>
